@@ -1,15 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Suspiria</title>
-</head>
-<body>
-    <h1>Suspiria</h1>
+{% extends 'base.html' %}
 
-    <h3>Name:</h3>
-    <p>{{ name }}</p>
+{% block title %}Suspiria{% endblock %}
+
+{% block content %}
+<h1>Suspiria</h1>
+
+<h3>Name:</h3>
+<p>{{ name }}</p>
     
-    <h4>Class:</h4>
-    <p>{{ class }}</p>
-</body>
-</html>
+<h4>Class:</h4>
+<p>{{ class }}</p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Description</th>
+    </tr>
+
+    {% for product in products %}
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.amount}}</td>
+            <td>{{product.description}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<br />
+
+<a href="{% url 'main:create_product' %}">
+    <button>
+        Add New Product
+    </button>
+</a>
+    
+{% endblock content %}
