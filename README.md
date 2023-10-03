@@ -193,3 +193,73 @@ Langkah-langkah mengimplementasikan fungsi registrasi, login, dan logout untuk m
 27. Pada model Product yang sudah dibuat, tambahkan "user = models.ForeignKey(User, on_delete=models.CASCADE)"
 28. Membuka views.py yang ada pada subdirektori main, dan sesuaikan kode pada fungsi create_product. Sesuaikan juga fungsi show_main
 29. Lakukan migrasi model
+
+
+Penjelasan Tugas 5
+
+Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya:
+
+Element Selector (tagname)
+Manfaat:
+Mengganti gaya default dari elemen HTML tertentu, seperti <p>, <h1>, atau <a>. Berguna untuk styling elemen-elemen dasar tanpa kelas atau ID tertentu.
+Waktu yang Tepat:
+Gunakan saat kita ingin mengubah gaya dari satu atau beberapa elemen HTML spesifik. Cocok untuk gaya dasar atau default elemen HTML.
+
+Class Selector (.classname)
+Manfaat:
+Memungkinkan kita menggabungkan elemen HTML dengan gaya tertentu secara bebas, tanpa memperhatikan jenis elemen tersebut. Ideal untuk styling elemen-elemen yang memiliki kesamaan desain, tetapi bukan tipe elemen yang sama.
+Waktu yang Tepat:
+Gunakan saat kita ingin memberikan gaya kepada beberapa elemen yang berbagi karakteristik desain yang sama. Cocok untuk menambahkan gaya kepada elemen-elemen yang memiliki kelas yang sama.
+
+ID Selector (#idname)
+Manfaat:
+Memungkinkan kita untuk mengidentifikasi dan styling elemen HTML tertentu yang memiliki ID unik. Berguna saat kita hanya ingin mengubah gaya satu elemen khusus.
+Waktu yang Tepat:
+Gunakan ketika kita ingin memberikan gaya kepada elemen yang memiliki ID unik (tidak boleh ada lebih dari satu elemen dengan ID yang sama dalam satu halaman HTML).
+
+Universal Selector (*)
+Manfaat:
+Memengaruhi semua elemen dalam halaman HTML. Berguna untuk mengatur beberapa properti secara global atau me-reset gaya default.
+Waktu yang Tepat:
+Gunakan dengan hati-hati karena dapat berdampak pada seluruh halaman. Sebaiknya digunakan secara terbatas.
+
+Jelaskan HTML5 Tag yang kamu ketahui:
+
+"<header>" digunakan untuk menunjukkan bagian atas dari sebuah dokumen atau bagian dari situs web. Biasanya berisi logo, judul, dan elemen navigasi.
+"<nav>" mengandung elemen-elemen navigasi, seperti menu atau tautan ke halaman lain.
+"<section>" digunakan untuk mengelompokkan konten yang berhubungan dalam sebuah dokumen, seperti bagian-bagian dari artikel atau halaman.
+"<article>" mendefinisikan konten yang berdiri sendiri dan dapat dipublikasikan secara independen, seperti berita atau postingan blog.
+"<footer>" menunjukkan bagian bawah dari sebuah dokumen atau bagian dari situs web. Biasanya berisi informasi kontak, tautan sosial, atau hak cipta.
+
+Jelaskan perbedaan antara margin dan padding:
+
+Margin adalah ruang di sekitar elemen HTML yang digunakan untuk memberikan jarak antara elemen tersebut dengan elemen lain di sekitarnya. Margin tidak memiliki latar belakang atau warna, dan berdampak pada tata letak keseluruhan elemen.
+
+Padding adalah ruang di dalam elemen HTML yang digunakan untuk memberikan jarak antara konten elemen dengan batas (border) elemen tersebut. Padding berdampak pada tampilan elemen dan tidak memengaruhi tata letak keseluruhan.
+
+Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+Tailwind mempromosikan pendekatan yang sangat modular dengan menggunakan kelas-kelas utilitas untuk mengatur gaya elemen HTML. Kita dapat dengan mudah menyesuaikan tampilan sesuai dengan kebutuhan dengan menambahkan atau menghapus kelas-kelas. Tailwind biasanya menghasilkan kode CSS yang lebih ringan dibandingkan dengan Bootstrap, karena hanya menghasilkan gaya yang diperlukan.
+
+Bootstrap menyediakan sejumlah besar komponen dan gaya bawaan yang dapat digunakan secara langsung. Cocok untuk pengembangan prototipe cepat atau proyek yang membutuhkan komponen UI siap pakai. Bootstrap dapat menghasilkan kode CSS yang lebih besar karena menyertakan banyak gaya dan komponen, bahkan jika kita tidak menggunakannya semua.
+
+Kapan sebaiknya kita menggunakan Bootstrap atau Tailwind tergantung pada proyek kita. Jika kita memerlukan komponen siap pakai dan ingin cepat membangun prototipe, Bootstrap bisa menjadi pilihan yang baik. Di sisi lain, jika kita menginginkan tingkat fleksibilitas yang tinggi dan ingin menghindari gaya yang tidak perlu, Tailwind mungkin lebih cocok.
+
+Langkah-langkah mengimplementasikan kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau CSS framework (seperti Bootstrap, Tailwind, Bulma):
+
+1. Membuka file base.html yang telah dibuat sebelumnya pada templates folder yang berada di root. Didalam templates/base.html, menambahkan tag <meta name="viewport"> agar halaman web dapat menyesuaikan ukuran dan perilaku perangkat mobile. Jika sudah, tambahkan Bootstrap CSS dan JS untuk mengambil keuntungan dari desain yang sudah ada. Muat Bootstrap CSS melalui URL eksternal serta jQuery, Popper.js, dan Bootstrap JavaScript untuk fungsi interaktif yang diperlukan.
+
+2. main.html adalah halaman utama yang menampilkan daftar produk dan navigasi. kita gunakan Bootstrap untuk membuat navigasi (navbar) di bagian atas halaman. Grid sistem Bootstrap digunakan di sini untuk mengatur tampilan daftar produk dalam baris dan kolom yang responsif. Setiap produk ditampilkan dalam card Bootstrap yang memiliki judul, teks, dan tombol edit/hapus.
+3. menggunakan Bootstrap untuk membuat formulir pendaftaran dan login dengan input, tombol, dan pesan kesalahan yang sesuai pada register.html dan login.html.
+4. Menggunakan Bootstrap untuk membuat formulir yang sesuai dengan input yang diperlukan untuk nama produk, jumlah, dan deskripsi pada create_product.html dan edit_product.html. Digunakan juga card Bootstrap untuk mengelilingi formulir sehingga tampilannya lebih menarik.
+
+5. Membuka views.py yang ada pada subdirektori main, dan membuat fungsi baru bernama edit_product yang menerima parameter request dan id. Tambahkan kode yang sesuai untuk fungsi edit_product.
+6. Membuat berkas HTML baru dengan nama edit_product.html pada subdirektori main/templates.
+7. Membuka urls.py yang berada pada direktori main dan mengimport fungsi edit_product yang sudah dibuat.
+8. Menambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor.
+9. Membuka main.html yang berada pada subdirektori main/templates. Sesuaikan kode agar terlihat tombol edit pada setiap baris tabel.
+
+10. Membuat fungsi baru dengan nama delete_product yang menerima parameter request dan id pada views.py di folder main untuk menghapus data produk.
+11. Membuka urls.py yang ada pada folder main dan impor fungsi yang sudah dibuat.
+12. Menambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor.
+13. Membuka berkas main.html yang ada pada folder main/templates dan sesuaikan kode agar terdapat tombol hapus untuk setiap produk.
