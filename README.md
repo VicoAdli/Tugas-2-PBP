@@ -263,3 +263,53 @@ Langkah-langkah mengimplementasikan kustomisasi desain pada templat HTML yang te
 11. Membuka urls.py yang ada pada folder main dan impor fungsi yang sudah dibuat.
 12. Menambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor.
 13. Membuka berkas main.html yang ada pada folder main/templates dan sesuaikan kode agar terdapat tombol hapus untuk setiap produk.
+
+Penjelasan Tugas 6
+
+A. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+Asynchronous programming dan synchronous programming adalah dua paradigma yang berbeda dalam pengembangan perangkat lunak. Dalam paradigma Synchronous Programming, tugas-tugas dieksekusi secara berurutan, satu per satu. Jika ada tugas yang memakan waktu lama, tugas-tugas lain akan terblokir dan harus menunggu sampai tugas tersebut selesai. Dalam paradigma Asynchronous programming, tugas-tugas dieksekusi secara non-blokir. Ini memungkinkan program untuk melanjutkan menjalankan tugas-tugas lain tanpa harus menunggu tugas yang memakan waktu lama selesai. Biasanya, tugas-tugas ini menggunakan callback functions, promises, atau async/await untuk menangani hasil ketika tugas tersebut selesai.
+
+B. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+Paradigma event-driven programming mengacu pada pendekatan di mana program merespons peristiwa (event) yang terjadi, seperti interaksi user, pesan dari server, atau perubahan status sistem. Program akan menentukan bagaimana merespons peristiwa tersebut dengan menetapkan event handler atau callback yang akan dijalankan saat event terjadi. Misalkan kita memiliki tombol dalam halaman web. Saat tombol tersebut diklik, kita akan menggunakan event-driven programming untuk menentukan tindakan yang diambil saat tombol diklik.
+Contoh
+    const button = document.getElementById('myButton');
+    button.addEventListener('click', function() {
+        alert('Tombol telah diklik!');
+    });
+
+
+C. Jelaskan penerapan asynchronous programming pada AJAX.
+
+AJAX (Asynchronous JavaScript and XML) adalah teknik yang memanfaatkan asynchronous programming untuk mengambil data dari server tanpa harus mengganti seluruh halaman web. Dalam AJAX, Anda menggunakan metode seperti XMLHttpRequest atau Fetch API untuk mengirim permintaan ke server dan menangani respons secara asynchronous, sehingga halaman web tetap responsif.
+
+D. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
+Fetch API adalah teknologi asli JavaScript yang memungkinkan pengambilan data dari server dengan cara yang lebih modern dan ekspresif. Ini memiliki dukungan untuk promises, sehingga lebih mudah mengelola asynchronous operasi. jQuery adalah library JavaScript yang memiliki dukungan untuk AJAX dan berbagai fungsi utilitas lainnya. Namun, jQuery cukup besar dan mungkin memiliki beberapa kelebihan yang tidak diperlukan dalam proyek-proyek kecil.
+
+Pilihan antara keduanya tergantung pada kebutuhan proyek dan preferensi. Jika bekerja pada proyek besar dan memerlukan banyak fitur jQuery, jQuery bisa menjadi pilihan yang baik. Namun, jika ingin kode yang lebih ringan dan modern, Fetch API mungkin merupakan pilihan yang lebih baik.
+
+E. Langkah-langkah mengimplementasikan mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX GET dan POST serta melakukan perintah collectstatic.
+
+1. Membuat fungsi baru pada views.py dengan nama get_product_json yang menerima parameter request. Isi fungsi dengan kode yang sesuai.
+
+2. Membuat fungsi baru pada views.py dengan nama add_product_ajax yang menerima parameter request.
+3. Impor from django.views.decorators.csrf import csrf_exempt pada berkas views.py.
+4. Tambahkan dekorator @csrf_exempt di atas fungsi add_product_ajax yang sudah dibuat. Isi fungsi dengan kode yang sesuai.
+
+5. Buka berkas urls.py pada folder main dan impor fungsi get_product_json serta add_product_ajax. Tambah path url kedua fungsi tersebut ke dalam urlpatterns.
+6. Membuka berkas main.html pada main/templates dan hapuslah bagian kode table yang sudah dibuat.
+7. Menambah <id="product_container"> sebagai struktur cards
+8. Membuat block script di bagian bawah berkas dan membuat fungsi baru pada block script tersebut dengan nama getProducts().
+9. Membuat fungsi baru pada block script dengan nama refreshProducts() yang digunakan untuk me-refresh data produk secara asynchronous.
+
+10. Menambahkan kode untuk mengimplementasikan modal (Bootstrap).
+11. Menambahkan button yang berfungsi untuk menampilkan modal.
+
+12. Membuat fungsi baru pada block script dengan nama addProduct(). Isi fungsi dengan kode yang sesuai.
+13. Menambahkan fungsi onclick pada button "Add Product" pada modal untuk menjalankan fungsi addProduct().
+
+14. Membuat fungsi baru pada block script dengan nama deleteProduct(). Isi fungsi dengan kode yang sesuai.
+15. Membuat fungsi baru pada block script dengan nama addEventListener(). Isi fungsi dengan kode yang sesuai.
+16. Membuat fungsi baru pada block script dengan nama attachButtonListeners(). Isi fungsi dengan kode yang sesuai.
